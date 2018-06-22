@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>toggle</title>
+    <style>
+        #div1,
+        #div2 {
+            width: 200px;
+            height: 100px;
+            background: yellowgreen;
+            border: 1px solid #f60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="div1">toggle</div>
+        <div id="div2">toggle动画</div>
+        <button>直接切换</button>
+        <button>切换动画</button>
+    </div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $("button:first").click(() => {
+        $("#div1").toggle();
+    })
+    $("button:last").click(() => {
+        $("#div2").toggle({
+            duration: 3000,
+            complet: () => {
+                alert('动画执行完毕');
+            }
+        })
+    })
+</script>
+
+</html>

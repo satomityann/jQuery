@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom元素处理get方法</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+        }
+        
+        #box a {
+            font-size: 20px;
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+    </div>
+    <select id="getSelect">
+        <option value="1">get正数索引参数</option>
+        <option value="2">get负数索引参数</option>
+    </select>
+    <input id="btn" type="button" value="点击执行">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    //点击按钮
+    $("#btn").click(() => {
+        //点击按钮获取select的value值
+        let $v = $("#getSelect").val();
+        //获取a元素
+        let $a = $("#box a");
+        //判断select的value值
+        if ($v == 1) {
+            $a.get(1).style.color = "blue";
+        } else if ($v == 2) {
+            $a.get(-1).style.color = "red";
+        }
+    })
+</script>
+
+</html>
